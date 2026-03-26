@@ -18,15 +18,15 @@ export default function AboutSection() {
             
             <div className="stats-row">
               <div className="stat-item">
-                <h4 className="stat-number">[10+]</h4>
+                <h4 className="stat-number">[0]</h4>
                 <p className="stat-label">Years Experience</p>
               </div>
               <div className="stat-item">
-                <h4 className="stat-number">[500+]</h4>
+                <h4 className="stat-number">[0]</h4>
                 <p className="stat-label">Shipments Delivered</p>
               </div>
               <div className="stat-item">
-                <h4 className="stat-number">[100%]</h4>
+                <h4 className="stat-number">[0]</h4>
                 <p className="stat-label">Client Satisfaction</p>
               </div>
             </div>
