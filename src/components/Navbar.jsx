@@ -1,14 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { Globe } from 'lucide-react';
+import { Globe, Menu, X } from 'lucide-react';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  // Close mobile menu when clicking a link
+  const closeMobileMenu = () => setMobileMenuOpen(false);
 
   return (
     <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
@@ -17,10 +21,20 @@ export default function Navbar() {
           <Globe className="logo-icon" color="var(--color-accent)" size={28} />
           <span className="logo-text">[Company Name]</span>
         </a>
-        <nav className="nav-links">
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#contact" className="btn btn-primary" style={{ padding: '0.5rem 1rem' }}>Contact Us</a>
+
+        {/* Mobile menu button */}
+        <button
+          className="mobile-menu-btn"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+
+        <nav className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
+          <a href="#about" onClick={closeMobileMenu}>About</a>
+          <a href="#services" onClick={closeMobileMenu}>Services</a>
+          <a href="#contact" className="btn btn-primary" style={{ padding: '0.5rem 1rem' }} onClick={closeMobileMenu}>Contact Us</a>
         </nav>
       </div>
 
@@ -62,6 +76,41 @@ export default function Navbar() {
         }
         .nav-links a:not(.btn):hover {
           color: var(--color-accent);
+        }
+        .mobile-menu-btn {
+          display: none;
+          background: none;
+          border: none;
+          color: var(--color-text);
+          cursor: pointer;
+          padding: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+          .mobile-menu-btn {
+            display: block;
+          }
+          .nav-links {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            height: 100vh;
+            background: rgba(10, 15, 26, 0.98);
+            backdrop-filter: blur(20px);
+            flex-direction: column;
+            justify-content: center;
+            gap: 2rem;
+            transition: right 0.3s ease;
+            padding: 2rem;
+            border-left: 1px solid var(--color-border);
+          }
+          .nav-links.mobile-open {
+            right: 0;
+          }
+          .nav-links a {
+            font-size: 1.1rem;
+          }
         }
       `}</style>
     </header>

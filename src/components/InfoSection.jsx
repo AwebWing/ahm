@@ -46,9 +46,14 @@ export default function InfoSection() {
         }
         .services-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 2rem;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+          gap: 1.5rem;
           margin-top: 3rem;
+        }
+        @media (max-width: 768px) {
+          .services-grid {
+            grid-template-columns: 1fr;
+          }
         }
         .service-card {
           padding: 2.5rem 2rem;
