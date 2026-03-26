@@ -11,7 +11,7 @@ export default function ContactForm() {
         
         <div className="contact-grid">
           <div className="contact-info">
-            <h3 className="info-title">Let's Discuss Your Needs</h3>
+            <h3 className="info-title">let us now</h3>
             <p className="info-desc">
               [contactDescriptionText]
             </p>
