@@ -15,7 +15,7 @@ export default function AboutSection() {
             <p className="about-text">
               [aboutCompanyText]
             </p>
-            
+
             <div className="stats-row">
               <div className="stat-item">
                 <h4 className="stat-number">[0]</h4>
@@ -31,10 +31,10 @@ export default function AboutSection() {
               </div>
             </div>
           </div>
-          
+
           <div className="about-visual">
             <div className="glass-panel image-placeholder">
-              <p>[Add a professional overview image, warehouse, or map here]</p>
+              <p>[img]</p>
             </div>
           </div>
         </div>

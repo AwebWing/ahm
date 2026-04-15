@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Globe, Menu, X } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -18,8 +19,8 @@ export default function Navbar() {
     <header className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-content">
         <a href="#" className="logo">
-          <Globe className="logo-icon" color="var(--color-accent)" size={28} />
-          <span className="logo-text">[Company Name]</span>
+          <img src={logoImg} alt="Company Logo" className="logo-image" style={{ height: '36px', width: 'auto', objectFit: 'contain' }} />
+          <span className="logo-text">Sino Tunisian Commercial Cooperation</span>
         </a>
 
         {/* Mobile menu button */}

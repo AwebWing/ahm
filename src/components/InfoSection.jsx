@@ -26,7 +26,7 @@ export default function InfoSection() {
         <h2 className="section-title">
           Our <span>Expertise</span>
         </h2>
-        
+
         <div className="services-grid">
           {services.map((service, index) => (
             <div key={index} className="glass-panel service-card">
