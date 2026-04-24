@@ -24,14 +24,30 @@ export default function Background3D() {
   }, []);
 
   useEffect(() => {
-    if (globeRef.current) {
+    if (!globeRef.current) return;
+    
+    try {
       // Auto-rotate the globe slowly for aesthetic background feel
       const controls = globeRef.current.controls();
-      controls.autoRotate = true;
-      controls.autoRotateSpeed = 0.5;
+      if (controls) {
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 0.5;
+      }
       
       // Initially focus on the general area between China and Tunisia
       globeRef.current.pointOfView({ lat: 38, lng: 63, altitude: 2 });
+
+      // Set the base globe color to match our dark theme (ocean) and remove grids
+      // We wrap this in a timeout to ensure Three.js has initialized the material
+      setTimeout(() => {
+        if (!globeRef.current) return;
+        const material = globeRef.current.globeMaterial();
+        if (material && material.color && typeof material.color.set === 'function') {
+          material.color.set('#0A0F1A');
+        }
+      }, 100);
+    } catch (e) {
+      console.error("Globe initialization error:", e);
     }
   }, [globeRef, countries]);
 
@@ -54,7 +70,6 @@ export default function Background3D() {
         width={dimensions.width}
         height={dimensions.height}
         backgroundColor="rgba(0,0,0,0)" // Transparent to inherit our #101827 dark theme background
-        globeImageUrl="//unpkg.com/three-globe/example/img/earth-dark.jpg"
         polygonsData={countries.features}
         // Slightly elevate the target countries to make them pop
         polygonAltitude={d => (['CHN', 'TUN'].includes(d.properties.ISO_A3) ? 0.03 : 0.01)}
