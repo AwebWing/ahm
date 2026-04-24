@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Hero() {
   return (
@@ -17,19 +18,19 @@ export default function Hero() {
             across all major industries — so you can focus on growing your business.
           </p>
           <div className="hero-actions">
-            <a href="#contact" className="btn btn-primary">
+            <Link to="/#contact" className="btn btn-primary">
               Get a Quote <ArrowRight size={18} style={{ marginLeft: '8px' }} />
-            </a>
-            <a href="#who-we-are" className="btn btn-outline">
+            </Link>
+            <Link to="/#who-we-are" className="btn btn-outline">
               Learn More
-            </a>
+            </Link>
           </div>
         </div>
       </div>
 
-      <a href="#who-we-are" className="scroll-indicator" aria-label="Scroll down">
+      <Link to="/#who-we-are" className="scroll-indicator" aria-label="Scroll down">
         <ChevronDown size={24} />
-      </a>
+      </Link>
 
       <style>{`
         .hero {
