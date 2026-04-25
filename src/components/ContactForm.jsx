@@ -1,13 +1,33 @@
 import React, { useState } from 'react';
-import { Mail, MapPin, MessageCircle, Send } from 'lucide-react';
+import { Mail, MapPin, MessageCircle, Send, Loader } from 'lucide-react';
+
+
 
 export default function ContactForm() {
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState('idle'); // idle | loading | success | error
+  const [fields, setFields] = useState({ name: '', company: '', phone: '', message: '' });
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => setFields({ ...fields, [e.target.name]: e.target.value });
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 4000);
+    setStatus('loading');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify(fields),
+      });
+      if (res.ok) {
+        setStatus('success');
+        setFields({ name: '', company: '', phone: '', message: '' });
+        setTimeout(() => setStatus('idle'), 6000);
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -65,7 +85,7 @@ export default function ContactForm() {
 
           {/* Form side */}
           <div className="glass-panel form-wrapper">
-            {submitted ? (
+            {status === 'success' ? (
               <div className="form-success">
                 <div className="success-icon">✓</div>
                 <h3>Message Sent!</h3>
@@ -73,26 +93,33 @@ export default function ContactForm() {
               </div>
             ) : (
               <form className="contact-form" onSubmit={handleSubmit}>
+                {status === 'error' && (
+                  <div className="form-error-banner">
+                    Something went wrong. Please try again or email us directly at ahmed@sinotuncc.com.
+                  </div>
+                )}
                 <div className="form-row">
                   <div className="form-group">
                     <label htmlFor="contact-name">Name</label>
-                    <input id="contact-name" type="text" placeholder="Your full name" className="form-control" required />
+                    <input id="contact-name" name="name" type="text" placeholder="Your full name" className="form-control" required value={fields.name} onChange={handleChange} />
                   </div>
                   <div className="form-group">
                     <label htmlFor="contact-company">Company</label>
-                    <input id="contact-company" type="text" placeholder="Your company name" className="form-control" />
+                    <input id="contact-company" name="company" type="text" placeholder="Your company name" className="form-control" value={fields.company} onChange={handleChange} />
                   </div>
                 </div>
                 <div className="form-group">
                   <label htmlFor="contact-phone">Phone / WhatsApp</label>
-                  <input id="contact-phone" type="tel" placeholder="+216 XX XXX XXX" className="form-control" />
+                  <input id="contact-phone" name="phone" type="tel" placeholder="+216 XX XXX XXX" className="form-control" value={fields.phone} onChange={handleChange} />
                 </div>
                 <div className="form-group">
                   <label htmlFor="contact-message">Message</label>
-                  <textarea id="contact-message" rows="5" placeholder="What product or service are you looking for? Include specs, quantity, and any relevant details." className="form-control" required></textarea>
+                  <textarea id="contact-message" name="message" rows="5" placeholder="What product or service are you looking for? Include specs, quantity, and any relevant details." className="form-control" required value={fields.message} onChange={handleChange}></textarea>
                 </div>
-                <button type="submit" className="btn btn-primary submit-btn">
-                  <Send size={16} style={{ marginRight: '8px' }} /> Send Message
+                <button type="submit" className="btn btn-primary submit-btn" disabled={status === 'loading'}>
+                  {status === 'loading'
+                    ? <><Loader size={16} className="spin-icon" style={{ marginRight: '8px' }} /> Sending…</>
+                    : <><Send size={16} style={{ marginRight: '8px' }} /> Send Message</>}
                 </button>
               </form>
             )}
@@ -250,6 +277,22 @@ export default function ContactForm() {
           justify-content: center;
           font-size: 1rem;
           padding: 1rem;
+        }
+        .form-error-banner {
+          background: rgba(220,60,60,0.15);
+          border: 1px solid rgba(220,60,60,0.35);
+          border-radius: 8px;
+          padding: 0.85rem 1rem;
+          font-size: 0.88rem;
+          color: #ff8a8a;
+          margin-bottom: 1.25rem;
+          line-height: 1.5;
+        }
+        @keyframes spin {
+          to { transform: rotate(360deg); }
+        }
+        .spin-icon {
+          animation: spin 0.8s linear infinite;
         }
         .form-success {
           display: flex;
