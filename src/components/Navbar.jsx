@@ -112,19 +112,30 @@ export default function Navbar() {
           color: #ffffff;
         }
         .logo-text {
-          font-size: 0.95rem;
+          font-size: 1.1rem;
           font-weight: 700;
           white-space: nowrap;
           color: #ffffff;
         }
         
+        @media (max-width: 1200px) {
+          .logo {
+            gap: 0.5rem;
+          }
+          .nav-links {
+            gap: 1rem;
+            font-size: 0.85rem;
+          }
+          .logo-text {
+            font-size: 1rem;
+          }
+        }
+
         @media (max-width: 900px) {
           .logo-text {
-            font-size: 0.9rem;
-            max-width: 170px;
+            font-size: 1rem;
+            max-width: 240px;
             overflow: hidden;
-            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
           }
           
           .logo-text span {
@@ -134,22 +145,9 @@ export default function Navbar() {
           }
         }
 
-        @media (max-width: 1200px) {
-          .logo {
-            gap: 0.5rem;
-          }
-          .nav-links {
-            gap: 1rem;
-            font-size: 0.8rem;
-          }
-          .logo-text {
-            font-size: 0.85rem;
-          }
-        }
-
         @keyframes spotify-slide {
           0%, 15% { transform: translateX(0); }
-          40%, 60% { transform: translateX(calc(-100% + 160px)); }
+          40%, 60% { transform: translateX(calc(-100% + 230px)); }
           85%, 100% { transform: translateX(0); }
         }
         .nav-links {
