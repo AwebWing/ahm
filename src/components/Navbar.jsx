@@ -42,7 +42,7 @@ export default function Navbar() {
       <div className="container nav-content">
         <Link to="/" className="logo">
           <img src={logoImg} alt="Sino Tunisian CC Logo" className="logo-image" style={{ height: '36px', width: 'auto', objectFit: 'contain' }} />
-          <span className="logo-text">Sino Tunisian<span className="logo-cc"> CC</span></span>
+          <span className="logo-text">{t('logo.text')}</span>
         </Link>
 
         {/* Mobile menu button */}
@@ -108,9 +108,7 @@ export default function Navbar() {
           letter-spacing: 0.3px;
           flex-shrink: 0;
           text-decoration: none;
-        }
-        .logo-cc {
-          color: var(--color-accent);
+          color: #ffffff;
         }
         .nav-links {
           display: flex;

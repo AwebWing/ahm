@@ -1,4 +1,7 @@
 {
+  "logo": {
+    "text": "Coopération commerciale sino-tunisienne"
+  },
   "nav": {
     "home": "Accueil",
     "advantage": "Notre Avantage Compétitif",
@@ -10,7 +13,7 @@
     "badge": "Tunisie · Chine · Commerce Global",
     "title1": "Votre Pont Entre la",
     "titleHighlight": "Tunisie et la Chine",
-    "subtitle": "Sino Tunisian Commercial Cooperation connecte les entreprises tunisiennes avec des usines et fournisseurs chinois vérifiés. Nous gérons le sourcing, la logistique et les douanes dans tous les secteurs majeurs.",
+    "subtitle": "Coopération commerciale sino-tunisienne connecte les entreprises tunisiennes avec des usines et fournisseurs chinois vérifiés. Nous gérons le sourcing, la logistique et les douanes dans tous les secteurs majeurs.",
     "ctaQuote": "Obtenir un Devis",
     "ctaLearn": "En Savoir Plus"
   },
@@ -18,7 +21,7 @@
     "label": "Qui Sommes-Nous",
     "title": "Un Partenaire de Confiance pour le Commerce International",
     "titleHighlight": "Partenaire",
-    "text1": "Sino Tunisian Commercial Cooperation connecte les entreprises tunisiennes avec des usines et fournisseurs chinois vérifiés. Basés à Tunis, nous gérons le sourcing, la logistique et les douanes pour que vous puissiez vous concentrer sur votre croissance.",
+    "text1": "Coopération commerciale sino-tunisienne connecte les entreprises tunisiennes avec des usines et fournisseurs chinois vérifiés. Basés à Tunis, nous gérons le sourcing, la logistique et les douanes pour que vous puissiez vous concentrer sur votre croissance.",
     "text2": "En tant que représentant officiel de Yingli Solar en Afrique du Nord, nous apportons des produits de classe mondiale sur le marché tunisien. Notre modèle à la commande signifie que vous n'importez que ce dont vous avez besoin.",
     "highlights": {
       "tunis": "Basé à Tunis — compréhension du marché local",
@@ -197,7 +200,7 @@
     "ctaBtn": "Contactez-Nous"
   },
   "footer": {
-    "copyright": "© {{year}} Sino Tunisian Commercial Cooperation. Tous droits réservés.",
+    "copyright": "© {{year}} Coopération commerciale sino-tunisienne. Tous droits réservés.",
     "contact": "ahmed@sinotuncc.com · +216 52 773 919 · Tunis, Tunisie"
   }
 }
