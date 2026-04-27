@@ -42,7 +42,7 @@ export default function Navbar() {
       <div className="container nav-content">
         <Link to="/" className="logo">
           <img src={logoImg} alt="Sino Tunisian CC Logo" className="logo-image" style={{ height: '36px', width: 'auto', objectFit: 'contain' }} />
-          <span className="logo-text">{t('logo.text')}</span>
+          <span className="logo-text"><span>{t('logo.text')}</span></span>
         </Link>
 
         {/* Mobile menu button */}
@@ -112,15 +112,51 @@ export default function Navbar() {
           color: #ffffff;
         }
         .logo-text {
+          font-size: 0.95rem;
+          font-weight: 700;
           white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
+          color: #ffffff;
+        }
+        
+        @media (max-width: 900px) {
+          .logo-text {
+            font-size: 0.9rem;
+            max-width: 170px;
+            overflow: hidden;
+            mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+          }
+          
+          .logo-text span {
+            display: inline-block;
+            white-space: nowrap;
+            animation: spotify-slide 10s ease-in-out infinite;
+          }
+        }
+
+        @media (max-width: 1200px) {
+          .logo {
+            gap: 0.5rem;
+          }
+          .nav-links {
+            gap: 1rem;
+            font-size: 0.8rem;
+          }
+          .logo-text {
+            font-size: 0.85rem;
+          }
+        }
+
+        @keyframes spotify-slide {
+          0%, 15% { transform: translateX(0); }
+          40%, 60% { transform: translateX(calc(-100% + 160px)); }
+          85%, 100% { transform: translateX(0); }
         }
         .nav-links {
           display: flex;
           align-items: center;
-          gap: 1.5rem;
-          font-size: 0.9rem;
+          gap: 1.25rem;
+          font-size: 0.85rem;
           font-weight: 500;
         }
         .nav-links a:not(.btn) {
