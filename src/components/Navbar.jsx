@@ -106,9 +106,15 @@ export default function Navbar() {
           font-weight: 700;
           font-size: 1.1rem;
           letter-spacing: 0.3px;
-          flex-shrink: 0;
+          flex-shrink: 1; /* Allow logo to shrink if needed */
+          min-width: 0;
           text-decoration: none;
           color: #ffffff;
+        }
+        .logo-text {
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
         .nav-links {
           display: flex;
@@ -150,10 +156,11 @@ export default function Navbar() {
           display: none;
           background: none;
           border: none;
-          color: var(--color-text);
+          color: #ffffff; /* Use white explicitly to be sure */
           cursor: pointer;
           padding: 0.5rem;
           z-index: 200;
+          flex-shrink: 0;
         }
 
         @media (max-width: 900px) {
@@ -190,6 +197,12 @@ export default function Navbar() {
             margin-top: 1rem;
             width: 100%;
             justify-content: center;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .logo-text {
+            max-width: 140px;
           }
         }
         
