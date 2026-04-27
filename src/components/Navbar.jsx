@@ -42,7 +42,7 @@ export default function Navbar() {
       <div className="container nav-content">
         <Link to="/" className="logo">
           <img src={logoImg} alt="Sino Tunisian CC Logo" className="logo-image" style={{ height: '36px', width: 'auto', objectFit: 'contain' }} />
-          <span className="logo-text"><span>{t('logo.text')}</span></span>
+          <span className="logo-text">{t('logo.text')}</span>
         </Link>
 
         {/* Mobile menu button */}
@@ -112,10 +112,13 @@ export default function Navbar() {
           color: #ffffff;
         }
         .logo-text {
-          font-size: 1.1rem;
+          font-size: 1rem;
           font-weight: 700;
-          white-space: nowrap;
+          line-height: 1;
+          white-space: normal;
+          max-width: 220px;
           color: #ffffff;
+          display: block;
         }
         
         @media (max-width: 1200px) {
@@ -127,28 +130,16 @@ export default function Navbar() {
             font-size: 0.85rem;
           }
           .logo-text {
-            font-size: 1rem;
+            font-size: 0.9rem;
+            max-width: 180px;
           }
         }
 
         @media (max-width: 900px) {
           .logo-text {
-            font-size: 1rem;
-            max-width: 240px;
-            overflow: hidden;
+            font-size: 0.85rem;
+            max-width: 160px;
           }
-          
-          .logo-text span {
-            display: inline-block;
-            white-space: nowrap;
-            animation: spotify-slide 10s ease-in-out infinite;
-          }
-        }
-
-        @keyframes spotify-slide {
-          0%, 15% { transform: translateX(0); }
-          40%, 60% { transform: translateX(calc(-100% + 230px)); }
-          85%, 100% { transform: translateX(0); }
         }
         .nav-links {
           display: flex;
