@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import Hero from '../components/Hero';
 import AboutSection from '../components/AboutSection';
 import InfoSection from '../components/InfoSection';
@@ -7,6 +8,8 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import ContactForm from '../components/ContactForm';
 
 export default function HomePage() {
+  const { t } = useTranslation();
+
   return (
     <main>
       <Hero />
@@ -17,8 +20,8 @@ export default function HomePage() {
       <ContactForm />
       <footer className="site-footer">
         <div className="container">
-          <p>© {new Date().getFullYear()} Sino Tunisian Commercial Cooperation. All rights reserved.</p>
-          <p className="footer-sub">ahmed@sinotuncc.com · +216 52 773 919 · Tunis, Tunisia</p>
+          <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
+          <p className="footer-sub">{t('footer.contact')}</p>
         </div>
       </footer>
 

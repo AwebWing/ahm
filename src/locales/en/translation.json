@@ -1,0 +1,203 @@
+{
+  "nav": {
+    "home": "Home",
+    "advantage": "Our Competitive Advantage",
+    "whyChina": "Why Work with China?",
+    "whoWeAre": "Who We Are",
+    "contact": "Contact Us"
+  },
+  "hero": {
+    "badge": "Tunisia · China · Global Trade",
+    "title1": "Your Bridge Between",
+    "titleHighlight": "Tunisia and China",
+    "subtitle": "Sino Tunisian Commercial Cooperation connects Tunisian businesses with verified Chinese factories and suppliers. We handle sourcing, logistics, and customs across all major industries — so you can focus on growing your business.",
+    "ctaQuote": "Get a Quote",
+    "ctaLearn": "Learn More"
+  },
+  "about": {
+    "label": "Who We Are",
+    "title": "A Trusted Partner in International Trade",
+    "titleHighlight": "Partner",
+    "text1": "Sino Tunisian Commercial Cooperation connects Tunisian businesses with verified Chinese factories and suppliers. Based in Tunis, we handle sourcing, logistics, and customs across all major industries — so you can focus on growing your business.",
+    "text2": "As the official Yingli Solar representative in North Africa, we bring world-class products and exclusive partnerships to the Tunisian market. Our order-based model means you only import what you need — no wasted inventory, no unnecessary risk.",
+    "highlights": {
+      "tunis": "Based in Tunis — understanding local business",
+      "china": "Deep connections in China — we know the system",
+      "verified": "Verified suppliers only — no middlemen, no scams",
+      "languages": "Arabic, French, English & Chinese — no communication gaps"
+    },
+    "stats": {
+      "languages": "Languages",
+      "verified": "Verified Suppliers",
+      "service": "End-to-End Service",
+      "focus": "Focus"
+    }
+  },
+  "whyUs": {
+    "label": "Why Choose Us?",
+    "title": "Our Competitive Edge",
+    "titleHighlight": "Competitive Edge",
+    "subtitle": "We don't just broker deals — we're your strategic partner, combining local expertise with an unmatched Chinese supplier network.",
+    "reasons": {
+      "tunisia": {
+        "title": "Based in Tunisia",
+        "desc": "On-the-ground understanding of the local business environment, regulations, culture, and market dynamics — you're never dealing with someone who doesn't know Tunisia."
+      },
+      "china": {
+        "title": "Deep Connections in China",
+        "desc": "We speak the language, know the system, and have built real relationships with factories over years of direct engagement — things a newcomer cannot shortcut."
+      },
+      "verified": {
+        "title": "Verified Suppliers Only",
+        "desc": "No middlemen, no guesswork, no scams. Every supplier is vetted for certifications, performance history, and production capacity before we recommend them."
+      },
+      "languages": {
+        "title": "Full Communication in 4 Languages",
+        "desc": "We communicate fluently in Arabic, French, English, and Chinese — eliminating every communication barrier across your entire supply chain."
+      }
+    }
+  },
+  "how": {
+    "label": "How We Do It",
+    "title": "Our Process",
+    "titleHighlight": "Process",
+    "subtitle": "A transparent, repeatable process that takes you from idea to delivery — with zero guesswork.",
+    "steps": {
+      "need": {
+        "title": "Tell Us What You Need",
+        "desc": "Share your specifications, quantity, and budget. No matter the product or industry — we listen and we find it."
+      },
+      "find": {
+        "title": "We Find the Right Factory",
+        "desc": "We identify verified suppliers, negotiate pricing, arrange samples, confirm timelines, and validate certifications — all on your behalf."
+      },
+      "manage": {
+        "title": "We Manage the Order A to Z",
+        "desc": "From production oversight and quality inspection to international shipping and Tunisian customs clearance — full transparency at every step."
+      },
+      "receive": {
+        "title": "You Receive Your Goods",
+        "desc": "On time. As expected. With post-delivery support and follow-up to ensure complete satisfaction."
+      }
+    }
+  },
+  "services": {
+    "label": "What We Do",
+    "title": "Products & Services",
+    "titleHighlight": "Services",
+    "subtitle": "From solar energy to industrial equipment, we source the products your business needs — directly from verified Chinese factories, with full logistics support.",
+    "items": {
+      "solar": {
+        "title": "Solar Panels & Accessories",
+        "desc": "Official representative of Yingli Solar in North Africa — bringing world-class, tier-1 certified photovoltaic systems to the Tunisian market.",
+        "badge": "Yingli Solar Partner"
+      },
+      "pumps": {
+        "title": "Heat Pumps",
+        "desc": "High-efficiency heat pump solutions sourced directly from leading Chinese manufacturers for residential and commercial applications."
+      },
+      "lighting": {
+        "title": "Electricity & Lighting",
+        "desc": "A comprehensive range of electrical components, switchgear, and professional lighting solutions at competitive wholesale prices."
+      },
+      "construction": {
+        "title": "Construction Machines & Materials",
+        "desc": "Heavy machinery, construction materials, and tools sourced on-demand from verified Chinese factories — no minimum catalog restrictions."
+      },
+      "industrial": {
+        "title": "Industrial Equipment",
+        "desc": "Industrial machinery and materials across a broad range of sectors, tailored to your specifications and sourced from certified suppliers."
+      },
+      "custom": {
+        "title": "Custom Sourcing",
+        "desc": "Tell us what you need — from any sector — and we find the right factory. Our order-based model means you only import what you need."
+      }
+    }
+  },
+  "contact": {
+    "label": "Contact Us",
+    "title": "Let's Talk Business",
+    "titleHighlight": "Talk Business",
+    "subtitle": "Tell us what you need. We'll handle the rest — sourcing, logistics, customs, delivery.",
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "location": "Location",
+    "locationValue": "Tunis, Tunisia",
+    "tagline1": "We're not just a trading company.",
+    "tagline2": "We're your bridge to global success.",
+    "successTitle": "Message Sent!",
+    "successText": "We'll get back to you as soon as possible.",
+    "errorText": "Something went wrong. Please try again or email us directly at ahmed@sinotuncc.com.",
+    "form": {
+      "name": "Name",
+      "company": "Company",
+      "phone": "Phone / WhatsApp",
+      "message": "Message",
+      "namePlaceholder": "Your full name",
+      "companyPlaceholder": "Your company name",
+      "phonePlaceholder": "+216 XX XXX XXX",
+      "messagePlaceholder": "What product or service are you looking for? Include specs, quantity, and any relevant details.",
+      "send": "Send Message",
+      "sending": "Sending..."
+    }
+  },
+  "caPage": {
+    "heroLabel": "Our Competitive Advantage",
+    "heroTitle": "What Makes Us Different",
+    "heroTitleHighlight": "Different",
+    "heroSubtitle": "At Sino-Tunisian Commercial Cooperation, we leverage a unique approach that combines flexibility, market expertise, and strategic partnerships. Here is how we differentiate ourselves through the VRIO Framework.",
+    "comparisonTitle": "Us vs. Typical Intermediaries",
+    "comparisonTitleHighlight": "Typical Intermediaries",
+    "table": {
+      "capability": "Capability",
+      "us": "Sino Tunisian CC",
+      "typical": "Typical Intermediary",
+      "attr1": "Yingli Solar Exclusivity",
+      "attr2": "Order-Based (No Min. Inventory)",
+      "attr3": "End-to-End (Source → Customs)",
+      "attr4": "Multilingual (4 Languages)",
+      "attr5": "Verified Suppliers Only",
+      "attr6": "Tunisia-Based Operations"
+    },
+    "ctaTitle": "Why You Must Work With Us",
+    "ctaText1": "Our approach doesn't just solve the logistical challenges of importing from China—it creates an opportunity for your business to thrive. With a strong foundation in supply chain flexibility, cost efficiency, and market knowledge, we offer a service that adapts as your business evolves.",
+    "ctaText2": "We're not just your supplier—we're your strategic partner, focused on driving growth and success through tailored solutions.",
+    "ctaBtn": "Partner With Us"
+  },
+  "chinaPage": {
+    "heroLabel": "Why Work with China?",
+    "heroTitle": "The World's Factory — Now Working for You",
+    "heroTitleHighlight": "Now Working for You",
+    "heroSubtitle": "China is not just a supplier — it's the global powerhouse behind most of the world's industrial and technological progress. Whether you're in construction, retail, energy, or services, Chinese factories offer unmatched capabilities.",
+    "facts": {
+      "hub": "Global Manufacturing Hub",
+      "output": "of World's Manufacturing Output",
+      "exports": "Countries China Exports To",
+      "products": "Products Made in China Annually"
+    },
+    "pillarsTitle": "Three Key Pillars",
+    "pillarsTitleHighlight": "Key Pillars",
+    "contextTitle": "Why Tunisian Businesses Should Care",
+    "contextTitleHighlight": "Tunisian Businesses",
+    "points": [
+      "China produces goods across every sector — construction, solar, industrial, lighting, and far beyond. If you need it, China makes it.",
+      "Tunisian importers who source directly from China reduce input costs by 30–60% compared to European or regional alternatives.",
+      "The Sino-Tunisian trade corridor is growing — businesses who establish direct supply chains now will have a lasting competitive edge.",
+      "Working through an established, verified partner like Sino Tunisian CC removes all the risk: no scams, no quality surprises, no customs delays."
+    ],
+    "closingQuote": "Let China Work for Your Business — The Right Way.",
+    "closingBody": "We're not just a trading company. We're your bridge to global success. Let's talk about what you need, and we'll make it happen.",
+    "steps": {
+      "spec": "Tell us your spec",
+      "source": "We source it in China",
+      "receive": "You receive it in Tunisia"
+    },
+    "ctaTitle": "Let's Talk About What You Need",
+    "ctaText": "One conversation is all it takes. Tell us your product, your quantity, your budget — and we'll outline exactly what we can do for you.",
+    "ctaBtn": "Get In Touch"
+  },
+  "footer": {
+    "copyright": "© {{year}} Sino Tunisian Commercial Cooperation. All rights reserved.",
+    "contact": "ahmed@sinotuncc.com · +216 52 773 919 · Tunis, Tunisia"
+  }
+}

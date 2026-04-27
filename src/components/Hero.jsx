@@ -1,28 +1,29 @@
 import React from 'react';
 import { ArrowRight, ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function Hero() {
+  const { t } = useTranslation();
+
   return (
     <section className="hero">
       <div className="container hero-container">
         <div className="hero-content">
-          <div className="badge">Tunisia · China · Global Trade</div>
+          <div className="badge">{t('hero.badge')}</div>
           <h1 className="title">
-            Your Bridge Between<br />
-            <span className="highlight">Tunisia and China</span>
+            {t('hero.title1')}<br />
+            <span className="highlight">{t('hero.titleHighlight')}</span>
           </h1>
           <p className="subtitle">
-            Sino Tunisian Commercial Cooperation connects Tunisian businesses with verified
-            Chinese factories and suppliers. We handle sourcing, logistics, and customs
-            across all major industries — so you can focus on growing your business.
+            {t('hero.subtitle')}
           </p>
           <div className="hero-actions">
             <Link to="/#contact" className="btn btn-primary">
-              Get a Quote <ArrowRight size={18} style={{ marginLeft: '8px' }} />
+              {t('hero.ctaQuote')} <ArrowRight size={18} style={{ marginLeft: '8px' }} />
             </Link>
             <Link to="/#who-we-are" className="btn btn-outline">
-              Learn More
+              {t('hero.ctaLearn')}
             </Link>
           </div>
         </div>

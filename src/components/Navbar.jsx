@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import logoImg from '../assets/logo.png';
 
 export default function Navbar() {
+  const { t, i18n } = useTranslation();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
@@ -53,11 +55,24 @@ export default function Navbar() {
         </button>
 
         <nav className={`nav-links ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-          <Link to="/" onClick={closeMobileMenu}>Home</Link>
-          <Link to="/competitive-advantage" onClick={closeMobileMenu}>Our Competitive Advantage</Link>
-          <Link to="/why-work-with-china" onClick={closeMobileMenu}>Why Work with China?</Link>
-          <Link to="/#who-we-are" onClick={closeMobileMenu}>Who We Are</Link>
-          <Link to="/#contact" className="btn btn-primary nav-cta" onClick={closeMobileMenu}>Contact Us</Link>
+          <Link to="/" onClick={closeMobileMenu}>{t('nav.home')}</Link>
+          <Link to="/competitive-advantage" onClick={closeMobileMenu}>{t('nav.advantage')}</Link>
+          <Link to="/why-work-with-china" onClick={closeMobileMenu}>{t('nav.whyChina')}</Link>
+          <Link to="/#who-we-are" onClick={closeMobileMenu}>{t('nav.whoWeAre')}</Link>
+          <Link to="/#contact" className="btn btn-primary nav-cta" onClick={closeMobileMenu}>{t('nav.contact')}</Link>
+          
+          <div className="lang-selector">
+            <Globe size={16} className="lang-icon" />
+            <select 
+              className="lang-select" 
+              value={i18n.language.split('-')[0]} 
+              onChange={(e) => i18n.changeLanguage(e.target.value)}
+            >
+              <option value="en">EN</option>
+              <option value="fr">FR</option>
+              <option value="zh">ZH</option>
+            </select>
+          </div>
         </nav>
       </div>
 
@@ -173,6 +188,46 @@ export default function Navbar() {
             width: 100%;
             justify-content: center;
           }
+          .lang-selector {
+            margin-top: 1rem;
+            width: 100%;
+            justify-content: center;
+          }
+        }
+        
+        .lang-selector {
+          display: flex;
+          align-items: center;
+          gap: 0.4rem;
+          margin-left: 0.5rem;
+          padding: 0.3rem 0.6rem;
+          background: rgba(255,255,255,0.05);
+          border-radius: 20px;
+          border: 1px solid var(--color-border);
+          transition: var(--transition);
+        }
+        .lang-selector:hover {
+          background: rgba(255,255,255,0.1);
+          border-color: var(--color-accent);
+        }
+        .lang-icon {
+          color: var(--color-accent);
+          opacity: 0.8;
+        }
+        .lang-select {
+          background: transparent;
+          border: none;
+          color: var(--color-text);
+          font-size: 0.8rem;
+          font-weight: 600;
+          cursor: pointer;
+          outline: none;
+          padding-right: 0.2rem;
+          text-transform: uppercase;
+        }
+        .lang-select option {
+          background: #0a0f1a;
+          color: white;
         }
       `}</style>
     </header>

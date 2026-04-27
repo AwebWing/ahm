@@ -1,40 +1,44 @@
 import React from 'react';
 import { MapPin, Network, CheckCircle2, Languages } from 'lucide-react';
-
-const reasons = [
-  {
-    icon: <MapPin size={28} />,
-    title: 'Based in Tunisia',
-    description: 'On-the-ground understanding of the local business environment, regulations, culture, and market dynamics — you\'re never dealing with someone who doesn\'t know Tunisia.',
-  },
-  {
-    icon: <Network size={28} />,
-    title: 'Deep Connections in China',
-    description: 'We speak the language, know the system, and have built real relationships with factories over years of direct engagement — things a newcomer cannot shortcut.',
-  },
-  {
-    icon: <CheckCircle2 size={28} />,
-    title: 'Verified Suppliers Only',
-    description: 'No middlemen, no guesswork, no scams. Every supplier is vetted for certifications, performance history, and production capacity before we recommend them.',
-  },
-  {
-    icon: <Languages size={28} />,
-    title: 'Full Communication in 4 Languages',
-    description: 'We communicate fluently in Arabic, French, English, and Chinese — eliminating every communication barrier across your entire supply chain.',
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 export default function WhyChooseUs() {
+  const { t } = useTranslation();
+
+  const reasons = [
+    {
+      icon: <MapPin size={28} />,
+      title: t('whyUs.reasons.tunisia.title'),
+      description: t('whyUs.reasons.tunisia.desc'),
+    },
+    {
+      icon: <Network size={28} />,
+      title: t('whyUs.reasons.china.title'),
+      description: t('whyUs.reasons.china.desc'),
+    },
+    {
+      icon: <CheckCircle2 size={28} />,
+      title: t('whyUs.reasons.verified.title'),
+      description: t('whyUs.reasons.verified.desc'),
+    },
+    {
+      icon: <Languages size={28} />,
+      title: t('whyUs.reasons.languages.title'),
+      description: t('whyUs.reasons.languages.desc'),
+    },
+  ];
+
   return (
     <section className="section why-section">
       <div className="container">
-        <div className="section-label-center">Why Choose Us?</div>
+        <div className="section-label-center">{t('whyUs.label')}</div>
         <h2 className="section-title">
-          Our <span>Competitive Edge</span>
+          {t('whyUs.title').split(t('whyUs.titleHighlight'))[0]}
+          <span>{t('whyUs.titleHighlight')}</span>
+          {t('whyUs.title').split(t('whyUs.titleHighlight'))[1]}
         </h2>
         <p className="section-subtitle">
-          We don't just broker deals — we're your strategic partner, combining local expertise with
-          an unmatched Chinese supplier network.
+          {t('whyUs.subtitle')}
         </p>
 
         <div className="why-grid">

@@ -1,13 +1,16 @@
 import React from 'react';
 import { Globe2, Handshake, Languages, CheckCircle2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import logoImg from '../assets/logo.png';
 
 export default function AboutSection() {
+  const { t } = useTranslation();
+
   const highlights = [
-    { icon: <Globe2 size={20} />, text: 'Based in Tunis — understanding local business' },
-    { icon: <Handshake size={20} />, text: 'Deep connections in China — we know the system' },
-    { icon: <CheckCircle2 size={20} />, text: 'Verified suppliers only — no middlemen, no scams' },
-    { icon: <Languages size={20} />, text: 'Arabic, French, English & Chinese — no communication gaps' },
+    { icon: <Globe2 size={20} />, text: t('about.highlights.tunis') },
+    { icon: <Handshake size={20} />, text: t('about.highlights.china') },
+    { icon: <CheckCircle2 size={20} />, text: t('about.highlights.verified') },
+    { icon: <Languages size={20} />, text: t('about.highlights.languages') },
   ];
 
   return (
@@ -15,19 +18,19 @@ export default function AboutSection() {
       <div className="container">
         <div className="about-grid">
           <div className="about-content">
-            <div className="section-label">Who We Are</div>
+            <div className="section-label">{t('about.label')}</div>
             <h2 className="section-title" style={{ textAlign: 'left' }}>
-              A Trusted <span>Partner</span> in International Trade
+              {t('about.title').split(t('about.titleHighlight'))[0]}
+              <span>{t('about.titleHighlight')}</span>
+              {t('about.title').split(t('about.titleHighlight'))[1]}
             </h2>
             <p className="about-text">
-              Sino Tunisian Commercial Cooperation connects Tunisian businesses with verified
-              Chinese factories and suppliers. Based in Tunis, we handle sourcing, logistics,
-              and customs across all major industries — so you can focus on growing your business.
+              {t('about.text1')}
             </p>
             <p className="about-text">
-              As the <strong style={{ color: 'var(--color-accent)' }}>official Yingli Solar representative in North Africa</strong>,
-              we bring world-class products and exclusive partnerships to the Tunisian market.
-              Our order-based model means you only import what you need — no wasted inventory, no unnecessary risk.
+              {t('about.text2').split('Yingli Solar')[0]}
+              <strong style={{ color: 'var(--color-accent)' }}>Yingli Solar</strong>
+              {t('about.text2').split('Yingli Solar')[1]}
             </p>
 
             <div className="highlights-list">
@@ -53,19 +56,19 @@ export default function AboutSection() {
                 <div className="stats-grid">
                   <div className="stat-item">
                     <span className="stat-number">4</span>
-                    <span className="stat-label">Languages</span>
+                    <span className="stat-label">{t('about.stats.languages')}</span>
                   </div>
                   <div className="stat-item">
                     <span className="stat-number">100%</span>
-                    <span className="stat-label">Verified Suppliers</span>
+                    <span className="stat-label">{t('about.stats.verified')}</span>
                   </div>
                   <div className="stat-item">
                     <span className="stat-number">A–Z</span>
-                    <span className="stat-label">End-to-End Service</span>
+                    <span className="stat-label">{t('about.stats.service')}</span>
                   </div>
                   <div className="stat-item">
                     <span className="stat-number">B2B</span>
-                    <span className="stat-label">Focus</span>
+                    <span className="stat-label">{t('about.stats.focus')}</span>
                   </div>
                 </div>
               </div>

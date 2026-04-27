@@ -1,48 +1,50 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, DollarSign, Cpu, Zap } from 'lucide-react';
-
-const pillars = [
-  {
-    icon: <DollarSign size={32} />,
-    title: 'Pricing Power',
-    description: 'Mass production combined with high operational efficiency results in prices simply unbeatable anywhere else in the world. For Tunisian B2B buyers, this translates directly to margin and competitiveness.',
-  },
-  {
-    icon: <Cpu size={32} />,
-    title: 'Innovation',
-    description: 'China leads globally in green technology, advanced manufacturing, AI-driven production, and automation. When you source from China, you access the frontier of industrial progress.',
-  },
-  {
-    icon: <Zap size={32} />,
-    title: 'Speed',
-    description: 'World-class logistics infrastructure and streamlined production timelines ensure fast, reliable delivery. From factory floor to Tunisian port — China is built for speed and scale.',
-  },
-];
-
-const facts = [
-  { value: '#1', label: 'Global Manufacturing Hub' },
-  { value: '28%', label: 'of World\'s Manufacturing Output' },
-  { value: '200+', label: 'Countries China Exports To' },
-  { value: '~2B', label: 'Products Made in China Annually' },
-];
+import { useTranslation } from 'react-i18next';
 
 export default function WhyWorkWithChinaPage() {
+  const { t } = useTranslation();
+
+  const pillars = [
+    {
+      icon: <DollarSign size={32} />,
+      title: t('chinaPage.pillarsTitle'),
+      description: t('chinaPage.heroSubtitle'),
+    },
+    {
+      icon: <Cpu size={32} />,
+      title: t('chinaPage.pillarsTitle'),
+      description: t('chinaPage.heroSubtitle'),
+    },
+    {
+      icon: <Zap size={32} />,
+      title: t('chinaPage.pillarsTitle'),
+      description: t('chinaPage.heroSubtitle'),
+    },
+  ];
+
+  const facts = [
+    { value: '#1', label: t('chinaPage.facts.hub') },
+    { value: '28%', label: t('chinaPage.facts.output') },
+    { value: '200+', label: t('chinaPage.facts.exports') },
+    { value: '~2B', label: t('chinaPage.facts.products') },
+  ];
+
   return (
     <main style={{ paddingTop: '6rem', position: 'relative', zIndex: 10 }}>
 
       {/* Hero */}
       <section className="section china-hero">
         <div className="container">
-          <div className="section-label-center">Why Work with China?</div>
+          <div className="section-label-center">{t('chinaPage.heroLabel')}</div>
           <h1 className="section-title" style={{ fontSize: 'clamp(2.5rem,4.5vw,3.75rem)' }}>
-            The World's Factory —<br />
-            <span>Now Working for You</span>
+            {t('chinaPage.heroTitle').split(t('chinaPage.heroTitleHighlight'))[0]}
+            <span>{t('chinaPage.heroTitleHighlight')}</span>
+            {t('chinaPage.heroTitle').split(t('chinaPage.heroTitleHighlight'))[1]}
           </h1>
           <p className="section-subtitle" style={{ maxWidth: '700px', margin: '0 auto' }}>
-            China is not just a supplier — it's the global powerhouse behind most of the world's
-            industrial and technological progress. Whether you're in construction, retail, energy,
-            or services, Chinese factories offer unmatched capabilities.
+            {t('chinaPage.heroSubtitle')}
           </p>
         </div>
       </section>
@@ -64,7 +66,11 @@ export default function WhyWorkWithChinaPage() {
       {/* Three Pillars */}
       <section className="section pillars-section">
         <div className="container">
-          <h2 className="section-title">Three <span>Key Pillars</span></h2>
+          <h2 className="section-title">
+            {t('chinaPage.pillarsTitle').split(t('chinaPage.pillarsTitleHighlight'))[0]}
+            <span>{t('chinaPage.pillarsTitleHighlight')}</span>
+            {t('chinaPage.pillarsTitle').split(t('chinaPage.pillarsTitleHighlight'))[1]}
+          </h2>
           <div className="pillars-grid">
             {pillars.map((p, i) => (
               <div key={i} className="glass-panel pillar-card">
@@ -83,15 +89,12 @@ export default function WhyWorkWithChinaPage() {
           <div className="context-grid">
             <div>
               <h2 className="section-title" style={{ textAlign: 'left', fontSize: '2rem' }}>
-                Why <span>Tunisian Businesses</span> Should Care
+                {t('chinaPage.contextTitle').split(t('chinaPage.contextTitleHighlight'))[0]}
+                <span>{t('chinaPage.contextTitleHighlight')}</span>
+                {t('chinaPage.contextTitle').split(t('chinaPage.contextTitleHighlight'))[1]}
               </h2>
               <div className="context-points">
-                {[
-                  'China produces goods across every sector — construction, solar, industrial, lighting, and far beyond. If you need it, China makes it.',
-                  'Tunisian importers who source directly from China reduce input costs by 30–60% compared to European or regional alternatives.',
-                  'The Sino-Tunisian trade corridor is growing — businesses who establish direct supply chains now will have a lasting competitive edge.',
-                  'Working through an established, verified partner like Sino Tunisian CC removes all the risk: no scams, no quality surprises, no customs delays.',
-                ].map((point, i) => (
+                {t('chinaPage.points', { returnObjects: true }).map((point, i) => (
                   <div key={i} className="context-point">
                     <span className="cp-num">{String(i + 1).padStart(2, '0')}</span>
                     <p>{point}</p>
@@ -102,18 +105,17 @@ export default function WhyWorkWithChinaPage() {
 
             <div className="glass-panel closing-card">
               <div className="closing-quote">
-                "Let China Work for Your Business — The Right Way."
+                "{t('chinaPage.closingQuote')}"
               </div>
               <p className="closing-body">
-                We're not just a trading company. We're your bridge to global success.
-                Let's talk about what you need, and we'll make it happen.
+                {t('chinaPage.closingBody')}
               </p>
               <div className="closing-steps">
-                <div className="cs-step">Tell us your spec</div>
+                <div className="cs-step">{t('chinaPage.steps.spec')}</div>
                 <div className="cs-arrow">→</div>
-                <div className="cs-step">We source it in China</div>
+                <div className="cs-step">{t('chinaPage.steps.source')}</div>
                 <div className="cs-arrow">→</div>
-                <div className="cs-step">You receive it in Tunisia</div>
+                <div className="cs-step">{t('chinaPage.steps.receive')}</div>
               </div>
             </div>
           </div>
@@ -124,13 +126,12 @@ export default function WhyWorkWithChinaPage() {
       <section className="section cta-section-china">
         <div className="container">
           <div className="cta-box glass-panel">
-            <h2>Let's Talk About What You Need</h2>
+            <h2>{t('chinaPage.ctaTitle')}</h2>
             <p>
-              One conversation is all it takes. Tell us your product, your quantity, your budget —
-              and we'll outline exactly what we can do for you.
+              {t('chinaPage.ctaText')}
             </p>
             <Link to="/#contact" className="btn btn-primary">
-              Get In Touch <ArrowRight size={18} style={{ marginLeft: '8px' }} />
+              {t('chinaPage.ctaBtn')} <ArrowRight size={18} style={{ marginLeft: '8px' }} />
             </Link>
           </div>
         </div>
@@ -138,7 +139,7 @@ export default function WhyWorkWithChinaPage() {
 
       <footer className="site-footer">
         <div className="container">
-          <p>© {new Date().getFullYear()} Sino Tunisian Commercial Cooperation · ahmed@sinotuncc.com · +216 52 773 919</p>
+          <p>{t('footer.copyright', { year: new Date().getFullYear() })}</p>
         </div>
       </footer>
 

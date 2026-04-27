@@ -1,51 +1,55 @@
 import React from 'react';
 import { Sun, Thermometer, Zap, Hammer, Factory, Package } from 'lucide-react';
-
-const services = [
-  {
-    icon: <Sun size={28} />,
-    title: 'Solar Panels & Accessories',
-    description: 'Official representative of Yingli Solar in North Africa — bringing world-class, tier-1 certified photovoltaic systems to the Tunisian market.',
-    badge: 'Yingli Solar Partner',
-  },
-  {
-    icon: <Thermometer size={28} />,
-    title: 'Heat Pumps',
-    description: 'High-efficiency heat pump solutions sourced directly from leading Chinese manufacturers for residential and commercial applications.',
-  },
-  {
-    icon: <Zap size={28} />,
-    title: 'Electricity & Lighting',
-    description: 'A comprehensive range of electrical components, switchgear, and professional lighting solutions at competitive wholesale prices.',
-  },
-  {
-    icon: <Hammer size={28} />,
-    title: 'Construction Machines & Materials',
-    description: 'Heavy machinery, construction materials, and tools sourced on-demand from verified Chinese factories — no minimum catalog restrictions.',
-  },
-  {
-    icon: <Factory size={28} />,
-    title: 'Industrial Equipment',
-    description: 'Industrial machinery and materials across a broad range of sectors, tailored to your specifications and sourced from certified suppliers.',
-  },
-  {
-    icon: <Package size={28} />,
-    title: 'Custom Sourcing',
-    description: 'Tell us what you need — from any sector — and we find the right factory. Our order-based model means you only import what you need.',
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 export default function InfoSection() {
+  const { t } = useTranslation();
+
+  const services = [
+    {
+      icon: <Sun size={28} />,
+      title: t('services.items.solar.title'),
+      description: t('services.items.solar.desc'),
+      badge: t('services.items.solar.badge'),
+    },
+    {
+      icon: <Thermometer size={28} />,
+      title: t('services.items.pumps.title'),
+      description: t('services.items.pumps.desc'),
+    },
+    {
+      icon: <Zap size={28} />,
+      title: t('services.items.lighting.title'),
+      description: t('services.items.lighting.desc'),
+    },
+    {
+      icon: <Hammer size={28} />,
+      title: t('services.items.construction.title'),
+      description: t('services.items.construction.desc'),
+    },
+    {
+      icon: <Factory size={28} />,
+      title: t('services.items.industrial.title'),
+      description: t('services.items.industrial.desc'),
+    },
+    {
+      icon: <Package size={28} />,
+      title: t('services.items.custom.title'),
+      description: t('services.items.custom.desc'),
+    },
+  ];
+
   return (
     <section id="services" className="section info-section">
       <div className="container">
-        <div className="section-label-center">What We Do</div>
+        <div className="section-label-center">{t('services.label')}</div>
         <h2 className="section-title">
-          Products & <span>Services</span>
+          {t('services.title').split(t('services.titleHighlight'))[0]}
+          <span>{t('services.titleHighlight')}</span>
+          {t('services.title').split(t('services.titleHighlight'))[1]}
         </h2>
         <p className="section-subtitle">
-          From solar energy to industrial equipment, we source the products your business needs —
-          directly from verified Chinese factories, with full logistics support.
+          {t('services.subtitle')}
         </p>
 
         <div className="services-grid">

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Mail, MapPin, MessageCircle, Send, Loader } from 'lucide-react';
-
-
+import { useTranslation } from 'react-i18next';
 
 export default function ContactForm() {
+  const { t } = useTranslation();
   const [status, setStatus] = useState('idle'); // idle | loading | success | error
   const [fields, setFields] = useState({ name: '', company: '', phone: '', message: '' });
 
@@ -35,12 +35,14 @@ export default function ContactForm() {
       <div className="contact-bg-overlay" />
       <div className="container">
         <div className="contact-header">
-          <div className="section-label-center">Contact Us</div>
+          <div className="section-label-center">{t('contact.label')}</div>
           <h2 className="section-title" style={{ color: '#fff' }}>
-            Let's <span>Talk Business</span>
+            {t('contact.title').split(t('contact.titleHighlight'))[0]}
+            <span>{t('contact.titleHighlight')}</span>
+            {t('contact.title').split(t('contact.titleHighlight'))[1]}
           </h2>
           <p className="section-subtitle" style={{ color: 'rgba(255,255,255,0.7)' }}>
-            Tell us what you need. We'll handle the rest — sourcing, logistics, customs, delivery.
+            {t('contact.subtitle')}
           </p>
         </div>
 
@@ -53,7 +55,7 @@ export default function ContactForm() {
                   <MessageCircle size={22} />
                 </div>
                 <div>
-                  <div className="info-card-label">WhatsApp</div>
+                  <div className="info-card-label">{t('contact.whatsapp')}</div>
                   <div className="info-card-value">+216 52 773 919</div>
                 </div>
               </a>
@@ -62,7 +64,7 @@ export default function ContactForm() {
                   <Mail size={22} />
                 </div>
                 <div>
-                  <div className="info-card-label">Email</div>
+                  <div className="info-card-label">{t('contact.email')}</div>
                   <div className="info-card-value">ahmed@sinotuncc.com</div>
                 </div>
               </a>
@@ -71,15 +73,15 @@ export default function ContactForm() {
                   <MapPin size={22} />
                 </div>
                 <div>
-                  <div className="info-card-label">Location</div>
-                  <div className="info-card-value">Tunis, Tunisia</div>
+                  <div className="info-card-label">{t('contact.location')}</div>
+                  <div className="info-card-value">{t('contact.locationValue')}</div>
                 </div>
               </div>
             </div>
 
             <div className="contact-tagline">
-              <div className="tagline-line">"We're not just a trading company.</div>
-              <div className="tagline-line accent">We're your bridge to global success."</div>
+              <div className="tagline-line">"{t('contact.tagline1')}</div>
+              <div className="tagline-line accent">{t('contact.tagline2')}"</div>
             </div>
           </div>
 
@@ -88,38 +90,38 @@ export default function ContactForm() {
             {status === 'success' ? (
               <div className="form-success">
                 <div className="success-icon">✓</div>
-                <h3>Message Sent!</h3>
-                <p>We'll get back to you as soon as possible.</p>
+                <h3>{t('contact.successTitle')}</h3>
+                <p>{t('contact.successText')}</p>
               </div>
             ) : (
               <form className="contact-form" onSubmit={handleSubmit}>
                 {status === 'error' && (
                   <div className="form-error-banner">
-                    Something went wrong. Please try again or email us directly at ahmed@sinotuncc.com.
+                    {t('contact.errorText')}
                   </div>
                 )}
                 <div className="form-row">
                   <div className="form-group">
-                    <label htmlFor="contact-name">Name</label>
-                    <input id="contact-name" name="name" type="text" placeholder="Your full name" className="form-control" required value={fields.name} onChange={handleChange} />
+                    <label htmlFor="contact-name">{t('contact.form.name')}</label>
+                    <input id="contact-name" name="name" type="text" placeholder={t('contact.form.namePlaceholder')} className="form-control" required value={fields.name} onChange={handleChange} />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="contact-company">Company</label>
-                    <input id="contact-company" name="company" type="text" placeholder="Your company name" className="form-control" value={fields.company} onChange={handleChange} />
+                    <label htmlFor="contact-company">{t('contact.form.company')}</label>
+                    <input id="contact-company" name="company" type="text" placeholder={t('contact.form.companyPlaceholder')} className="form-control" value={fields.company} onChange={handleChange} />
                   </div>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="contact-phone">Phone / WhatsApp</label>
-                  <input id="contact-phone" name="phone" type="tel" placeholder="+216 XX XXX XXX" className="form-control" value={fields.phone} onChange={handleChange} />
+                  <label htmlFor="contact-phone">{t('contact.form.phone')}</label>
+                  <input id="contact-phone" name="phone" type="tel" placeholder={t('contact.form.phonePlaceholder')} className="form-control" value={fields.phone} onChange={handleChange} />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="contact-message">Message</label>
-                  <textarea id="contact-message" name="message" rows="5" placeholder="What product or service are you looking for? Include specs, quantity, and any relevant details." className="form-control" required value={fields.message} onChange={handleChange}></textarea>
+                  <label htmlFor="contact-message">{t('contact.form.message')}</label>
+                  <textarea id="contact-message" name="message" rows="5" placeholder={t('contact.form.messagePlaceholder')} className="form-control" required value={fields.message} onChange={handleChange}></textarea>
                 </div>
                 <button type="submit" className="btn btn-primary submit-btn" disabled={status === 'loading'}>
                   {status === 'loading'
-                    ? <><Loader size={16} className="spin-icon" style={{ marginRight: '8px' }} /> Sending…</>
-                    : <><Send size={16} style={{ marginRight: '8px' }} /> Send Message</>}
+                    ? <><Loader size={16} className="spin-icon" style={{ marginRight: '8px' }} /> {t('contact.form.sending')}</>
+                    : <><Send size={16} style={{ marginRight: '8px' }} /> {t('contact.form.send')}</>}
                 </button>
               </form>
             )}

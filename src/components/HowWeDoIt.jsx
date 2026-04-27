@@ -1,28 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { MessageSquare, Search, Package, CheckCircle } from 'lucide-react';
-
-const steps = [
-  {
-    icon: <MessageSquare size={24} />,
-    title: 'Tell Us What You Need',
-    description: 'Share your specifications, quantity, and budget. No matter the product or industry — we listen and we find it.',
-  },
-  {
-    icon: <Search size={24} />,
-    title: 'We Find the Right Factory',
-    description: 'We identify verified suppliers, negotiate pricing, arrange samples, confirm timelines, and validate certifications — all on your behalf.',
-  },
-  {
-    icon: <Package size={24} />,
-    title: 'We Manage the Order A to Z',
-    description: 'From production oversight and quality inspection to international shipping and Tunisian customs clearance — full transparency at every step.',
-  },
-  {
-    icon: <CheckCircle size={24} />,
-    title: 'You Receive Your Goods',
-    description: 'On time. As expected. With post-delivery support and follow-up to ensure complete satisfaction.',
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 function StepCard({ step, index, visible }) {
   const labelRef = useRef(null);
@@ -72,8 +50,32 @@ function StepCard({ step, index, visible }) {
 }
 
 export default function HowWeDoIt() {
+  const { t } = useTranslation();
   const sectionRef = useRef(null);
   const [visible, setVisible] = useState(false);
+
+  const steps = [
+    {
+      icon: <MessageSquare size={24} />,
+      title: t('how.steps.need.title'),
+      description: t('how.steps.need.desc'),
+    },
+    {
+      icon: <Search size={24} />,
+      title: t('how.steps.find.title'),
+      description: t('how.steps.find.desc'),
+    },
+    {
+      icon: <Package size={24} />,
+      title: t('how.steps.manage.title'),
+      description: t('how.steps.manage.desc'),
+    },
+    {
+      icon: <CheckCircle size={24} />,
+      title: t('how.steps.receive.title'),
+      description: t('how.steps.receive.desc'),
+    },
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -87,12 +89,14 @@ export default function HowWeDoIt() {
   return (
     <section className="section how-section" ref={sectionRef}>
       <div className="container">
-        <div className="section-label-center">How We Do It</div>
+        <div className="section-label-center">{t('how.label')}</div>
         <h2 className="section-title">
-          Our <span>Process</span>
+          {t('how.title').split(t('how.titleHighlight'))[0]}
+          <span>{t('how.titleHighlight')}</span>
+          {t('how.title').split(t('how.titleHighlight'))[1]}
         </h2>
         <p className="section-subtitle">
-          A transparent, repeatable process that takes you from idea to delivery — with zero guesswork.
+          {t('how.subtitle')}
         </p>
 
         <div className="steps-grid">
